@@ -9,7 +9,7 @@ Requiere:
 
 El script de limpieza `clean_data.R` requiere `path_to_file` en donde se puede encontrar el archivo `refugios_nayarit.xlsx`. El nombre del archivo también puede ser modificado, para poder replicar para otros estados.
 
-**Así se ve el programa**:
+**Así se ve el programa, datos de contacto omitidos por privacidad:**:
 
 ![ ](www/refugios_nayarit.png?raw=true "Example of the Tool")
 
@@ -24,6 +24,6 @@ Requires:
 Cleaning Script `clean_data.R` requires `path_to_file` in which the raw file called `refugios_nayarit.xlsx` can be found. The name of the file can be changed too, in order to be able to replicate this for other states.
 
 
-**This is what the dashboard looks like:**
+**This is what the dashboard looks like, contact data ommited for privacy:**
 
 ![ ](www/refugios_nayarit.png?raw=true "Example of the Tool")
