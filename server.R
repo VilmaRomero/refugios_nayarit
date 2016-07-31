@@ -36,7 +36,7 @@ shinyServer(function(input, output) {
   # get the n closest shelters to the address given
   number_of_shelters <- reactive(input$n_shelters)
   n_closest_shelters <- reactive({ get_n_closest_shelters(starting_point(),number_of_shelters(),shelters_data)})
-  shelters_contact_data <- reactive({n_closest_shelters() %>% select(Refugio,Direccion,Municipio,
+  shelters_contact_data <- reactive({n_closest_shelters() %>% select(Numero,Refugio,Direccion,Municipio,
                                                                          Distancia_km,Responsable,Telefono)})
 
   output$map_with_shelters <- renderPlot({
@@ -49,6 +49,7 @@ shinyServer(function(input, output) {
       geom_point(data = shelters_data,
                  aes( x = Longitud,
                       y = Latitud), color= 'red',size=3,alpha=0.3,shape=15) +
+      geom_text(data = n_closest_shelters(),aes(x = Longitud,y = Latitud,label=Numero),vjust=-0.75) +
       # erase axis names and values, not useful for viz
       theme(axis.title.x=element_blank(),
             axis.text.x=element_blank(),
@@ -61,6 +62,6 @@ shinyServer(function(input, output) {
   
   output$shelters_information <- renderTable({
     shelters_contact_data()
-  })
+  },include.rownames=FALSE)
 
 })
