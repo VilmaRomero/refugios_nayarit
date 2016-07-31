@@ -34,7 +34,7 @@ shinyUI(fluidPage(
           img(src='proteccion_civil.png', align = "right", width="50" , height="50"),
           img(src='bomberos.png', align = "left", width="50" , height="50"),
           # Inputs
-          textInput("street", "Calle y Número", value = "San José 30"),
+          textInput("street", "Calle y Número", value = "San José del Valle 30"),
           textInput("settlement", "Colonia y/o Localidad y/o Municipio", value = "Bahía de Banderas"),
           numericInput("n_shelters","Número de Refugios", value = 3),
           sliderInput("zoom","Zoom",min=11,max=20,value=16,ticks = FALSE),
