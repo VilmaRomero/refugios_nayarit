@@ -40,7 +40,7 @@ shinyServer(function(input, output) {
                                                                          Distancia_km,Responsable,Telefono)})
 
   output$map_with_shelters <- renderPlot({
-    map_centered_on_location <- get_map(location = starting_point(), zoom = 16)
+    map_centered_on_location <- get_map(location = starting_point(), zoom = input$zoom)
     map_with_shelters <-  ggmap(map_centered_on_location) + 
       geom_point(data= starting_point(),aes(lon,lat),colour='blue',size=3) + # the location of the person
       geom_point(data = n_closest_shelters(),

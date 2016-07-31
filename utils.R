@@ -18,9 +18,7 @@ clean_excel_file <- function(path_to_file,file_name){
   
   # coordinates 213,281 have unsaveable formatting (digits missing)
   # coordinates 75,83,84,283,336,337,338 are missing
-  # coordinate 434 is reversed for lat lon and breaks distance functions :(
-  # shelters_data$Latitud[434] <- 20.71329; shelters_data$Longitud[434] <- -105.28229
-  
+ 
   # coordinate 434 is reversed for lat lon and breaks distance functions :(
   # this loop should take care of this kind of problem
   for(i in 1:dim(shelters_data)[2]){

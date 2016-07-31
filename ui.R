@@ -35,9 +35,11 @@ shinyUI(fluidPage(
           img(src='proteccion_civil.png', align = "right", width="50" , height="50"),
           img(src='bomberos.png', align = "left", width="50" , height="50"),
           # Inputs
-           textInput("street", "Calle y Número", value = "Abasolo 435"),
-           textInput("settlement", "Colonia y/o Localidad y/o Municipio", value = "Acaponeta"),
-           numericInput("n_shelters","Número de Refugios", value = 3)
+          textInput("street", "Calle y Número", value = "Abasolo 435"),
+          textInput("settlement", "Colonia y/o Localidad y/o Municipio", value = "Acaponeta"),
+          numericInput("n_shelters","Número de Refugios", value = 3),
+          sliderInput("zoom","Zoom",min=1,max=20,value=16),
+          "Tu dirección se mostrará con un círculo azul y los refugios más cercanos, con cuadrados rojos."
          )
   ),
   
